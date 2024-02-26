@@ -1,7 +1,6 @@
 rootProject.name = 'musinsa'
 
-
-include 'core:origin-db'
 include 'application:front'
+include 'core:origin-db'
 
-project(':core:origin-db').projectDir = new File(settingsDir, '../core/origin-db')
+//project(':core:origin-db').projectDir = new File(settingsDir, '../core/origin-db')
