@@ -3,10 +3,13 @@ package com.musinsa.util.config.jwt;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -15,7 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity(debug = true)
 @RequiredArgsConstructor
 public class WebSecurityConfig {
 
@@ -23,16 +26,18 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http
+        http
             .csrf(AbstractHttpConfigurer::disable)
-            .sessionManagement(AbstractHttpConfigurer::disable)
+            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            // .formLogin(Customizer.withDefaults())
             .formLogin(AbstractHttpConfigurer::disable)
+            // .httpBasic(Customizer.withDefaults())
             .httpBasic(AbstractHttpConfigurer::disable)
-            .authorizeHttpRequests(a -> a.anyRequest().permitAll())
+            .authorizeHttpRequests(a -> a.requestMatchers("/**").permitAll())
             // .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-            //.addFilter(jwtReqFilter)
-            .build()
-        ;
+            .addFilterBefore(jwtReqFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return http.build();
     }
 
     @Bean
