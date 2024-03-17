@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:globals/globals-${spring.profiles.active:local}.properties")
 public class GlobalProperties {
 
     // 인스턴스 필드로 변경

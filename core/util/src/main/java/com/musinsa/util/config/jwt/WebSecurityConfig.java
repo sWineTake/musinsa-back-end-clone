@@ -29,12 +29,10 @@ public class WebSecurityConfig {
         http
             .csrf(AbstractHttpConfigurer::disable)
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            // .formLogin(Customizer.withDefaults())
             .formLogin(AbstractHttpConfigurer::disable)
-            // .httpBasic(Customizer.withDefaults())
             .httpBasic(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(a -> a.requestMatchers("/**").permitAll())
-            // .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .addFilterBefore(jwtReqFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
