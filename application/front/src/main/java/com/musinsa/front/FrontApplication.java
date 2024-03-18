@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 
-@SpringBootApplication(scanBasePackages = {"com.musinsa.front", "com.musinsa.util"})
+@SpringBootApplication(scanBasePackages = {"com.musinsa.front", "com.musinsa.origin", "com.musinsa.util"})
 @PropertySources({
 	@PropertySource("classpath:/application-${spring.profiles.active}.properties"),
 	@PropertySource("classpath:/globals/globals-${spring.profiles.active}.properties")

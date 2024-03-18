@@ -5,12 +5,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class SpringControllerConfig {
+public class SpringConfigration {
 
-	@Bean
-	public SampleService getSampleService() {
-		return new SampleService();
-	}
+    @Bean
+    public SampleService getSampleService() {
+        return new SampleService();
+    }
 
 
 }
