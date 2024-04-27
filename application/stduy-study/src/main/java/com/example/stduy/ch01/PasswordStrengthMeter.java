@@ -1,4 +1,4 @@
-package com.example.stduystudy.ch01;
+package com.example.stduy.ch01;
 
 public class PasswordStrengthMeter {
 

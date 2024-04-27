@@ -1,7 +1,7 @@
-package com.example.stduystudy;
+package com.example.stduy;
 
-import com.example.stduystudy.ch01.PasswordStrength;
-import com.example.stduystudy.ch01.PasswordStrengthMeter;
+import com.example.stduy.ch01.PasswordStrength;
+import com.example.stduy.ch01.PasswordStrengthMeter;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

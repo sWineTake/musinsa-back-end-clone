@@ -1,4 +1,4 @@
-package com.example.stduystudy;
+package com.example.stduy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
