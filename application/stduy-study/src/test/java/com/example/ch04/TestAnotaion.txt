@@ -1,0 +1,46 @@
+
+@ParameterizedTest
+	-> 테스트에 필요한 매개변수를 전달해주는 어노테이션
+	-> 한개의 메서드가 다수의 테스트 케이스를 가지는 경우
+
+@ValueSource
+	-> TestMethod에 전달할 값을 어노테이션의 배열로 지정
+		-> @ValueSource(strings = {"apple", "banana", "grape"}) -> "apple", "banana", "grape"를 전달
+		-> @ValueSource(ints = {1, 2, 3, 4, 5}) -> 1, 2, 3, 4, 5를 전달
+	-> 단일값을 전달할 때 사용
+	-> 문자열, 숫자, 문자 등을 전달할 수 있음
+
+@CsvSource
+	-> CSV 형식으로 값을 전달
+		-> @CsvSource({"apple, 1", "banana, 2", "grape, 3"}) -> "apple, 1", "banana, 2", "grape, 3"을 전달
+	-> 여러개의 값을 전달할 때 사용
+	-> 문자열, 숫자, 문자 등을 전달할 수 있음
+
+@RepeatedTest
+	-> 반복 테스트를 수행
+	-> 반복 횟수를 지정할 수 있음
+	-> @RepeatedTest(5) -> 5번 반복
+	-> @RepeatedTest(value = 5, name = "{displayName} {currentRepetition}/{totalRepetitions}") -> 5번 반복하되, 테스트 이름을 지정
+	-> @RepeatedTest(value = 5, name = RepeatedTest.LONG_DISPLAY_NAME) -> 5번 반복하되, 테스트 이름을 지정
+	-> @RepeatedTest(value = 5, name = RepeatedTest.SHORT_DISPLAY_NAME) -> 5번 반복하되, 테스트 이름을 지정
+
+@TestFactory
+	-> 동적으로 TestMethod를 생성하는 팩토리 메서를 정의 어노테이션
+	-> 동적으로 다양한 TestCase를 검증해야하는 경우
+	-> Stream, Collection, Iterable, Iterator, IntStream, LongStream, DoubleStream을 반환하는 메서드를 정의
+
+@Timeout
+	-> 테스트가 지정된 시간 내에 완료되지 않으면 테스트를 실패로 처리
+	-> @Timeout(5) -> 5초 내에 완료되지 않으면 테스트 실패
+	-> @Timeout(value = 5, unit = TimeUnit.SECONDS) -> 5초 내에 완료되지 않으면 테스트 실패
+
+@ExtendWith
+	-> 테스트 실행 시 JUnit이 제공하는 기능을 확장할 때 사용
+	-> @ExtendWith({CustomExtension.class}) -> CustomExtension을 사용하여 테스트 실행
+	-> @ExtendWith({CustomExtension1.class, CustomExtension2.class}) -> CustomExtension1, CustomExtension2를 사용하여 테스트 실행
+
+
+
+
+
+
