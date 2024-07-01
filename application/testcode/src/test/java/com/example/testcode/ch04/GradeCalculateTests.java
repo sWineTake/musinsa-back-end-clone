@@ -1,7 +1,7 @@
-package com.example.ch04;
+package com.example.testcode.ch04;
 
-import com.example.stduystudy.ch04.domain.dto.test_doubles.Student;
-import com.example.stduystudy.ch04.repository.StubGradeRepository;
+import com.example.testcode.ch04.domain.dto.test_doubles.Student;
+import com.example.testcode.ch04.repository.StubGradeRepository;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;

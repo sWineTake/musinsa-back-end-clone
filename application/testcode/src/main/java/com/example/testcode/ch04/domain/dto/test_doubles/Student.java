@@ -1,4 +1,4 @@
-package com.example.stduystudy.ch04.domain.dto.test_doubles;
+package com.example.testcode.ch04.domain.dto.test_doubles;
 
 import lombok.*;
 

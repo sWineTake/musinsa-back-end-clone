@@ -1,4 +1,4 @@
-package com.example.stduystudy.ch04.repository;
+package com.example.testcode.ch04.repository;
 
 import java.util.HashMap;
 import java.util.Map;
