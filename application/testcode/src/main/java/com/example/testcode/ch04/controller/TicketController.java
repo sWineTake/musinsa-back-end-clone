@@ -1,14 +1,24 @@
 package com.example.testcode.ch04.controller;
 
 import com.example.testcode.ch04.domain.dto.Ticket;
+import com.example.testcode.ch04.service.TicketingService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
 
 @RestController
+@RequiredArgsConstructor
+@RequestMapping("/ticket")
 public class TicketController {
+	private final TicketingService ticketingService;
+
+	@GetMapping
+	public ResponseEntity<String> test() {return ResponseEntity.ok().body("test");}
 
 	@PostMapping("/reserve")
 	public ResponseEntity<Ticket> reservation() throws Exception{
@@ -24,9 +34,10 @@ public class TicketController {
 			.build();
 
 		System.out.println("reservation");
-
 		return ResponseEntity.ok().body(ticket);
 	}
+
+
 
 
 }
