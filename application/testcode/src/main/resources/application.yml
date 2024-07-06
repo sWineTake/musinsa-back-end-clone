@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: test
+  database:
+    url: jdbc:mysql://localhost:13306/testlabs
+    username: testcode
+    password: preonboarding
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name:testcode
+

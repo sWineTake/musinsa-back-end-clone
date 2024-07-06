@@ -1,7 +1,6 @@
 package com.example.testcode.ch04;
 
 import com.example.testcode.ch04.controller.TicketController;
-import com.example.testcode.ch04.domain.dto.Ticket;
 import com.example.testcode.ch04.service.TicketingService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

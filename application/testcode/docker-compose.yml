@@ -1,0 +1,17 @@
+services:
+  mysql:
+    user: 501:20
+    image: mysql:8.0.33
+    ports:
+      - 13306:3306
+    volumes:
+      - /Users/twocowsong/Documents/01.study/02.source/999.database/mysql/data:/var/lib/mysql.d
+      # -
+    command:
+      - '--character-set-server=utf8mb4'
+      - '--collation-server=utf8mb4_unicode_ci'
+    environment:
+      MYSQL_ROOT_PASSWORD: testlabs
+      MYSQL_DATABASE: fastcamp
+      MYSQL_USER: testcode
+      MYSQL_PASSWORD: preonboarding
